@@ -1,13 +1,6 @@
 <?php session_start(); ?>
 <?php require '../classes/USER.php'; ?>
 <?php
-/* echo $_POST['user-name'];
-echo $_POST['user-login'];
-echo $_POST['user-password'];
-echo $_POST['user-status'];
-echo $_POST['user-birthday'];
-echo $_POST['user-id']; die(); */
-
 if (!empty($_POST)) {
     if (isset($_POST['user-name']) && isset($_POST['user-login']) && isset($_POST['user-password']) && isset($_POST['user-status']) && isset($_POST['user-birthday']) && isset($_POST['user-id'])) {
         $update = 1;

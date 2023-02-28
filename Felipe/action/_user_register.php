@@ -17,6 +17,7 @@ if (!empty($_POST)) {
 if ($register == 1) {
     $registerNewUser = USER::register($newUserName, $newUserLogin, $newUserPassword, $newUserBirthday);
     echo $registerNewUser;
+
     echo '<script>alert("Cadastro realizado com sucesso!");</script>';
     echo "<script type='text/JavaScript'>window.location.href = '../page/user_registration.php';</script>";
     exit();

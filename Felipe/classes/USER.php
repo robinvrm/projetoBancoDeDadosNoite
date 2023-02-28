@@ -1,10 +1,10 @@
 <?php
+require_once '../classes/CONNECTION.php';
+
 class User
 {
     public static function getUsers()
     {
-        require_once '../classes/CONNECTION.php';
-
         return Connection::query("
             SELECT
                 *
@@ -26,8 +26,6 @@ class User
 
     public static function register($newUserName, $newUserLogin, $newUserPassword, $newUserBirthday)
     {
-        require_once '../classes/CONNECTION.php';
-
         return Connection::query("
             INSERT INTO tb_users
             (
@@ -50,8 +48,6 @@ class User
 
     public static function edit($updateUserName, $updateUserLogin, $updateUserPassword, $updateUserStatus, $updateUserBirthday, $userId)
     {
-        require_once '../classes/CONNECTION.php';
-
         return Connection::query("
             UPDATE
                 tb_users
@@ -62,7 +58,7 @@ class User
                 ativo = '{$updateUserStatus}',
                 data_nascimento = '{$updateUserBirthday}'
             WHERE TRUE
-                AND id = '{$userId}'
+                AND id_user = '{$userId}'
         ");
     }
 }

@@ -15,6 +15,7 @@ if (!empty($_POST)) {
 if ($register == 1) {
     $registerNewProduct = PRODUCT::register($newProductName, $newProductCategory);
     echo $registerNewProduct;
+
     echo '<script>alert("Cadastro realizado com sucesso!");</script>';
     echo "<script type='text/JavaScript'>window.location.href = '../page/product_registration.php';</script>";
     exit();
