@@ -19,8 +19,8 @@ $listaProdutos = Produtos::getAllProdutos();
         <?php $titleSitucaoProduto = ($produto['ativo']) ? "Desativar categoria" : "Ativar categoria"; ?>
         <?php $corBotao = ($produto['ativo']) ? "btn-danger" : "btn-success"; ?>
         <tr>
-          <td class="align-middle text-left text-uppercase"><?php echo STRINGS::encode($produto['nome']); ?></td>
-          <td class="align-middle text-left text-uppercase"><?php echo STRINGS::encode($produto['nome_categoria']); ?></td>
+          <td class="align-middle text-left text-uppercase"><?php echo $produto['nome']; ?></td>
+          <td class="align-middle text-left text-uppercase"><?php echo $produto['nome_categoria']; ?></td>
           <td class="align-middle text-center"><?php echo ($produto['created_at']) ? DATES::mysql_to_date($produto['created_at']) : "//"; ?></td>
           <td class="align-middle text-center">
             <button class="btn btn-alterar-estado-produto <?php echo $corBotao; ?>" data-produto='<?php echo $produto['id']; ?>' title="<?php echo $titleSitucaoProduto; ?>">

@@ -1,7 +1,7 @@
 <?php require_once('../start/class.php'); ?>
 
 <?php
-$nameUser = strtoupper(addslashes(STRINGS::encode(STRINGS::remove_accents(VALS::postG('nameUser')))));
+$nameUser = strtoupper(addslashes(VALS::postG('nameUser')));
 $cpfUser = VALS::postG('cpfUser');
 $birthDateUser = VALS::postG('birthDateUser');
 $login = VALS::postG('login');

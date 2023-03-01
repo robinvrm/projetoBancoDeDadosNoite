@@ -18,7 +18,7 @@ $listaCategorias = Categorias::getAllCategorias();
         <?php $titleSitucaoCategoria = ($categoria['ativo']) ? "Desativar categoria" : "Ativar categoria"; ?>
         <?php $corBotao = ($categoria['ativo']) ? "btn-danger" : "btn-success"; ?>
         <tr>
-          <td class="align-middle text-left text-uppercase"><?php echo STRINGS::encode($categoria['nome']); ?></td>
+          <td class="align-middle text-left text-uppercase"><?php echo $categoria['nome']; ?></td>
           <td class="align-middle text-center"><?php echo ($categoria['created_at']) ? DATES::mysql_to_date($categoria['created_at']) : "//"; ?></td>
           <td class="align-middle text-center">
             <button class="btn btn-alterar-estado-categoria <?php echo $corBotao; ?>" data-cliente='<?php echo $categoria['id']; ?>' title="<?php echo $titleSitucaoCategoria; ?>">
@@ -40,7 +40,7 @@ $listaCategorias = Categorias::getAllCategorias();
     }, function(result) {
       if (result.trim() == 'OK') {
         Swal.fire(
-          'Atualizado estado de cliente!',
+          'Atualizado estado da categoria!',
           '',
           'success'
         ).then((close) => {
@@ -49,7 +49,7 @@ $listaCategorias = Categorias::getAllCategorias();
         });
       } else {
         Swal.fire(
-          'Não foi possível atualizar estado do cliente!',
+          'Não foi possível atualizar estado da categoria!',
           '',
           'warning'
         ).then((close) => {

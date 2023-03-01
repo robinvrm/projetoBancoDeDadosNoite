@@ -19,7 +19,7 @@ $listaClientes = Users::getAllUsers();
         <?php $titleSitucaoCliente = ($cliente['ativo']) ? "Desativar cliente" : "Ativar cliente"; ?>
         <?php $corBotao = ($cliente['ativo']) ? "btn-danger" : "btn-success"; ?>
         <tr>
-          <td class="align-middle text-left text-uppercase"><?php echo STRINGS::encode($cliente['nome']); ?></td>
+          <td class="align-middle text-left text-uppercase"><?php echo $cliente['nome']; ?></td>
           <td class="align-middle text-center"><?php echo ($cliente['cpf']) ? $cliente['cpf'] : "---"; ?></td>
           <td class="align-middle text-center"><?php echo ($cliente['nascimento']) ? DATES::mysql_to_date($cliente['nascimento']) : "//"; ?></td>
           <td class="align-middle text-center">
@@ -42,7 +42,7 @@ $listaClientes = Users::getAllUsers();
     }, function(result) {
       if (result.trim() == 'OK') {
         Swal.fire(
-          'Atualizado estado de cliente!',
+          'Atualizado estado do usuário!',
           '',
           'success'
         ).then((close) => {
@@ -51,7 +51,7 @@ $listaClientes = Users::getAllUsers();
         });
       } else {
         Swal.fire(
-          'Não foi possível atualizar estado do cliente!',
+          'Não foi possível atualizar estado do usuário!',
           '',
           'warning'
         ).then((close) => {

@@ -2,7 +2,6 @@
 <?php include_once('../class/USERS.php'); ?>
 <?php include_once('../class/COMPONENTS.php'); ?>
 <?php include_once('../class/DATES.php'); ?>
-<?php include_once('../class/STRINGS.php'); ?>
 <?php include_once('../class/CATEGORIAS.php'); ?>
 <?php include_once('../class/PRODUTOS.php'); ?>
 <?php session_start(); ?>

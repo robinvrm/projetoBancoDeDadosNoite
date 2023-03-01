@@ -1,7 +1,7 @@
 <?php require_once('../start/class.php'); ?>
 
 <?php
-$nomeProduto = strtoupper(addslashes(STRINGS::encode(STRINGS::remove_accents(VALS::postG('nomeProduto')))));
+$nomeProduto = strtoupper(addslashes(VALS::postG('nomeProduto')));
 $categoriaId = VALS::postG('categoria');
 $usuarioId = VALS::sessionG('user_id');
 
